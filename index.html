@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Credit Calculation</title>
+</head>
+<body>
+  <h1>Credit Calculation</h1>
+  
+  <label for="course">Course:</label>
+  <input type="text" id="course" />
+  <br />
+  <label for="credits">Credits:</label>
+  <input type="number" id="credits" />
+  <br />
+  <button onclick="calculateCredits()">Calculate</button>
+  
+  <div id="result"></div>
+
+  <script>
+    function calculateCredits() {
+      var course = document.getElementById("course").value;
+      var credits = parseInt(document.getElementById("credits").value);
+      
+      // Send data to the server for processing
+      fetch('/calculate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ course: course, credits: credits })
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Display the calculated results
+        document.getElementById("result").innerHTML = `
+          <p>Current Credits: ${data.currentCredits}</p>
+          <p>Remaining Credits Needed: ${data.remainingCredits}</p>
+          <p>Required Credits: ${data.requiredCredits}</p>
+          <p>Departmental Electives Credits: ${data.departmentalElectives}</p>
+          <p>Non-Departmental Electives Credits: ${data.nonDepartmentalElectives}</p>
+          <p>General Education Course Credits: ${data.generalEducation}</p>
+        `;
+      });
+    }
+  </script>
+</body>
+</html>
