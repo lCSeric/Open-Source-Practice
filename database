@@ -1,0 +1,9 @@
+CREATE TABLE credit_results (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  current_credits INT,
+  remaining_credits INT,
+  required_credits INT,
+  departmental_electives INT,
+  non_departmental_electives INT,
+  general_education INT
+);
