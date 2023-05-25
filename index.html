@@ -159,27 +159,6 @@
       document.getElementById("need2Result").textContent = need2;
       document.getElementById("need3Result").textContent = need3;
       
-      // Send data to the server for processing
-      fetch('/calculate', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ course: course, credits: credits })
-      })
-      .then(response => response.json())
-      .then(data => {
-        // Display the calculated results
-        document.getElementById("result").innerHTML = `
-          <p>Current Credits: ${data.currentCredits}</p>
-          <p>Remaining Credits Needed: ${data.remainingCredits}</p>
-          <p>Required Credits: ${data.requiredCredits}</p>
-          <p>Departmental Electives Credits: ${data.departmentalElectives}</p>
-          <p>Non-Departmental Electives Credits: ${data.nonDepartmentalElectives}</p>
-          <p>General Education Course Credits: ${data.generalEducation}</p>
-        `;
-      });
-    }
   </script>
   <script src="script.js"></script>
 </body>
