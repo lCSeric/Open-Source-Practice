@@ -37,16 +37,6 @@ $GeneralEducationCourseCredit2 = $_POST["GeneralEducationCourseCredit2"];
 $GeneralEducationCourseCredit3 = $_POST["GeneralEducationCourseCredit3"];
 $GeneralEducationCourseCredit4 = $_POST["GeneralEducationCourseCredit4"];
 
-$sumResult  = $_POST["sumResult"];
-$sum1Result = $_POST["sum1Result"];
-$sum2Result = $_POST["sum2Result"];
-$sum3Result = $_POST["sum3Result"];
-
-$needResult  = $_POST["needResult"];
-$need1Result = $_POST["need1Result"];
-$need2Result = $_POST["need2Result"];
-$need3Result = $_POST["need3Result"];
-
 
 // 将数据插入数据库表格
 $sql = "INSERT INTO credit_data (
@@ -65,15 +55,7 @@ $sql = "INSERT INTO credit_data (
   GeneralEducationCourseCredit1,
   GeneralEducationCourseCredit2,
   GeneralEducationCourseCredit3,
-  GeneralEducationCourseCredit4,
-  sumResult,
-  sum1Result,
-  sum2Result,
-  sum3Result,
-  needResult,
-  need1Result,
-  need2Result,
-  need3Result
+  GeneralEducationCourseCredit4
 ) VALUES (
   $RequiredCredit1,
   $RequiredCredit2,
@@ -90,15 +72,7 @@ $sql = "INSERT INTO credit_data (
   $GeneralEducationCourseCredit1,
   $GeneralEducationCourseCredit2,
   $GeneralEducationCourseCredit3,
-  $GeneralEducationCourseCredit4,
-  $sumResult,
-  $sum1Result,
-  $sum2Result ,
-  $sum3Result,
-  $needResult,
-  $need1Result,
-  $need2Result,
-  $need3Result
+  $GeneralEducationCourseCredit4
 )";
 
 if ($conn->query($sql) === TRUE) {
