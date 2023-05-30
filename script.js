@@ -24,18 +24,63 @@ function calculateCredits() {
     var totalNonDepartmentalElective = NonDepartmentalElective1 + NonDepartmentalElective2 + NonDepartmentalElective3 + NonDepartmentalElective4;
     var totalGeneralEducationCourseCredit = GeneralEducationCourseCredit1 + GeneralEducationCourseCredit2 + GeneralEducationCourseCredit3 + GeneralEducationCourseCredit4;
   
-    document.getElementById("sumResult").textContent = totalRequiredCredit;
-    document.getElementById("needResult").textContent = 128 - totalRequiredCredit;
-  
+
+
+    document.getElementById("sumResult").textContent = totalRequiredCredit;    
+    if(51 - totalRequiredCredit <= 0){
+        document.getElementById("needResult").textContent = "PASS";
+    }
+    else{
+        document.getElementById("needResult").textContent = 51 - totalRequiredCredit;
+    }
+        
+
     document.getElementById("sum1Result").textContent = totalDepartmentalElective;
-    document.getElementById("need1Result").textContent = 10 - totalDepartmentalElective;
+    if(10-totalDepartmentalElective <= 0){
+        document.getElementById("need1Result").textContent = "PASS";
+    }
+    else{
+        document.getElementById("need1Result").textContent = 10 - totalDepartmentalElective;
+    }
+
   
     document.getElementById("sum2Result").textContent = totalNonDepartmentalElective;
-    document.getElementById("need2Result").textContent = 10 - totalNonDepartmentalElective;
+    if(10-totalNonDepartmentalElective <= 0){
+        document.getElementById("need2Result").textContent = "PASS";
+    }
+    else{
+        document.getElementById("need2Result").textContent = 10 - totalNonDepartmentalElective;
+    }
   
     document.getElementById("sum3Result").textContent = totalGeneralEducationCourseCredit;
-    document.getElementById("need3Result").textContent = 30 - totalGeneralEducationCourseCredit;
-  
+    if(30-totalNonDepartmentalElective <= 0){
+        document.getElementById("need3Result").textContent = "PASS";
+    }
+    else{
+        document.getElementById("need3Result").textContent = 30 - totalGeneralEducationCourseCredit;
+    }
+    
+    
+    // if (need <= 0){
+    //     document.getElementById("needResult").textContent = "PASS";
+    //   }else{
+    //     document.getElementById("needResult").textContent = need;
+    //   }
+    //   if (need1 <= 0){
+    //     document.getElementById("need1Result").textContent = "PASS";
+    //   }else{
+    //     document.getElementById("need1Result").textContent = need1;
+    //   }
+    //   if (need2 <= 0){
+    //     document.getElementById("need2Result").textContent = "PASS";
+    //   }else{
+    //     document.getElementById("need2Result").textContent = need2;
+    //   }
+    //   if (need3 <= 0){
+    //     document.getElementById("need3Result").textContent = "PASS";
+    //   }else{
+    //     document.getElementById("need3Result").textContent = need3;
+    //   }
     
     // 使用Fetch API发送请求
     fetch("database.php", {
@@ -59,15 +104,7 @@ function calculateCredits() {
         "GeneralEducationCourseCredit1": GeneralEducationCourseCredit1,
         "GeneralEducationCourseCredit2": GeneralEducationCourseCredit2,
         "GeneralEducationCourseCredit3": GeneralEducationCourseCredit3,
-        "GeneralEducationCourseCredit4": GeneralEducationCourseCredit4,
-        "sumResult":sumResult,
-        "sum1Result":sum1Result,
-        "sum2Result":sum2Result,
-        "sum3Result":sum3Result,
-        "needResult":needResult,
-        "need1Result":need1Result,
-        "need2Result":need2Result,
-        "need3Result":need3Result
+        "GeneralEducationCourseCredit4": GeneralEducationCourseCredit4
       })
     })
       .then(function(response) {
