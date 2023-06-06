@@ -10,4 +10,5 @@ open the website and enter URL localhost/(the file name)/index.html(if you name 
 you will see a website have the function we introduce
 After you enter your data and calculating, it will store automatically in database.
 
-To use the credit calculation, simply type the credit you have in each semester and and it will show you how much credit you need.
+To use the credit calculation, simply type the credit you have in each semester and press calculate then it will show you how much credit you need or if you finished the requested credit, it will show "PASS" at also need.
+once you press calculate, the html will connect to database to store your record.
