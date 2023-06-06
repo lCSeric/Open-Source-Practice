@@ -9,3 +9,5 @@ put that file into htdocs which is in the xampp file (default file path is C:\xa
 open the website and enter URL localhost/(the file name)/index.html(if you name the file same as us your URL is "localhost/opensoft/index.html")
 you will see a website have the function we introduce
 After you enter your data and calculating, it will store automatically in database.
+
+To use the credit calculation, simply type the credit you have in each semester and and it will show you how much credit you need.
