@@ -3,7 +3,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// 连接到数据库
+// 连接到数据库  
 $servername = "localhost";
 $username = "root";  // 替换为您的数据库用户名
 $password = "";      // 替换为您的数据库密码
@@ -11,9 +11,38 @@ $dbname = "credit_caculation";  // 替换为您创建的数据库名称
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// 检查连接是否成功
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+
+// 檢查表格是否已存在
+$tableName = "credit_data";
+$tableExists = false;
+
+$result = $conn->query("SHOW TABLES LIKE '$tableName'");
+
+if ($result->num_rows > 0) {
+    $tableExists = true;
+}
+
+// 如果表格不存在，則創建它
+if (!$tableExists) {
+    $createTableQuery = "CREATE TABLE $tableName (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        course VARCHAR(100),
+        credits INT,
+        current_credits INT,
+        remaining_credits INT,
+        required_credits INT,
+        departmental_electives INT,
+        non_departmental_electives INT,
+        general_education INT
+    )";
+
+    if ($conn->query($createTableQuery) === TRUE) {
+        echo "表格 $tableName 創建成功！";
+    } else {
+        echo "創建表格時出錯: " . $conn->error;
+    }
+} else {
+    echo "表格 $tableName 已存在，無需創建。";
 }
 
 // 获取 POST 请求中的数据
