@@ -3,4 +3,4 @@ After that to press calculate then it will show you how much credit you need or 
 once you press calculate, the html will connect to database to store your record.
 
 If you want to check out the data what you had entered ,you could open the admin in MySQL column in the xampp-control.
-After opening ,you can enter the database named 'credit_caculation' to see data
+After opening ,you can enter the table named credit_data which database named 'credit_caculation'  to see data.
