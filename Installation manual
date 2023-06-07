@@ -1,6 +1,7 @@
 Please download the XAMPP
 Open the xampp and start the function of apache and MySQL
 open the admin in the row of Mysql(That website is your database)
+press the CREATE at the left side of column and name the database 'credit_calculation'
 
 download these three codes which are database.php and index.html and script.js from github
 put those code in a file(we suggest the file name as easy as possible not to use space or symbol, we name the file 'opensoft')
