@@ -1,12 +1,6 @@
-Open the xampp and start the function of apache and MySQL
-open the admin in the row of Mysql(That website is your database)
-
-put those code in a file(we suggest the file name as easy as possible not to use space or symbol, we name the file opensoft)
-put that file into htdocs which is in the xampp file (default file path is C:\xampp\htdocs)
-
-open the website and enter URL localhost/(the file name)/index.html(if you name the file same as us your URL is "localhost/opensoft/index.html")
-you will see a website have the function we introduce
-After you enter your data and calculating, it will store automatically in database.
-
-To use the credit calculation, simply type the credit you have in each semester and press calculate then it will show you how much credit you need or if you finished the requested credit, it will show "PASS" at also need.
+To use the credit calculation, simply type the credit you have in each semester 
+After that to press calculate then it will show you how much credit you need or if you finished the requested credit, it will show "PASS" .
 once you press calculate, the html will connect to database to store your record.
+
+If you want to check out the data what you had entered ,you could open the admin in MySQL column in the xampp-control.
+After opening ,you can enter the database named 'credit calcution'
