@@ -1,5 +1,6 @@
 	
-# Topic:User's Credit calculation
+# Topic:
+User's Credit calculation
 # group
 The people from Tamkang university need to calculate their credit
 # goal
